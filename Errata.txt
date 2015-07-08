@@ -1,0 +1,28 @@
+FIXED1) Silkscreen font too small - does not print well
+FIXED2) X3 programming header has completely wrong spacing
+IGNORED3) MINOR - soldermask on micro does not go all the way to copper pads
+FIXED4) Battery input not connected to VBAT in schematic or on board.
+FIXED5) Q1 micro resonator has slightly wrong spacing for the part used.
+FIXED6) Pin numbering on LED silk screen is wrong
+FIXED7) LED soldermask could be a bit wider
+FIXED8) Q3 crystal is incorrect footprint.  Replaced with Newark 76R7536
+FIXED9) SCK needs to be wired between the two boards.  SCK, MOSI, and GND.  NOT 5V.
+FIXED10) Accelerometer should have an anti-aliasing filter.  ADXL337 uses external caps on outputs.
+FIXED11) Replace accelerometer with cheaper version
+FIXED12) LDC1000 coil should have a 100pF cap in parallel.
+FIXED13) Need to redo tactile switch footprint to match Newark part number 14P9504
+FIXED14) Need to redo resonator footprint to match Newark part number 11N7357
+FIXED15) Need to replace ADXL193 with ADXL337 Newark part number 94T2513
+FIXED16) Edit battery footprint to eliminate extra pins
+??????17) Add double battery footprint to increase battery capacity.
+FIXED18) Boost IC and associated components should move down away from battery
+PARTIAL19) Should eliminate all SparkFun footprints.  Fixing ground symbol causes problems.  Many of the parts are SparkFun.  Fixed many.  Remaining: R10 (adafruit), S2, GND, 5V, JP1, Q1
+FIXED20) Need to power ADXL337 with between 1.8 and 3.6V.  Use regulator like 13M2085.  Should wire supply voltage to an ADC.
+FIXED21) Check centroids of all parts on the board.
+FIXED22) Fix battery footprint to eliminate extra pads - they are interfering with routing.
+FIXED23) Outside LEDs will currently be ~ 17.6 mm apart if the boards are edge to edge.  However, if the board edges overlap and the X1 and X2 connector holes line up exactly, the outside LEDs will be ~9.5 mm apart.  That will have to be good enough, or the connectors will interfere with the LEDs.  The LEDs could probably shrink a bit more if we wanted to get really picky, but 9.5 is pretty close to 9.
+
+New features
+FIXED1) Add SiLabs CP2104 to get full reprogramming capability for only $1.43 per board.  Consider Microchip MCP2200 because it is cheaper on Newark ($1.94 with no contract discount).  There's also a footprint on Newark.  However, it requires an oscillator, which will add more money.  Probably best to get the CP2104 from Digikey.  Ensure TXO and RXI are connected correctly - verify with Banggood board.
+FIXED2) Pattern USB connector fingers onto the board to make a cheap USB connector.  Pad out thickness with tape or something for a decent fit in the USB slot.  For prototype, used Newark 01J8375, Molex 48037-1000.  Review Power_Jackslt from the SparkFun library on how to handle slots.  Mill layer needs to be sent to the board house.
+FIXED3) Add Zeners to the Vcc, D+ and D- lines of the USB connector.
